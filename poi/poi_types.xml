@@ -19,6 +19,7 @@
 	<poi_additional name="name:it" tag="name:it" type="text" />
 	<poi_additional name="name:ja" tag="name:ja" type="text" />
 	<poi_additional name="name:ko" tag="name:ko" type="text" />
+	<poi_additional name="name:lt" tag="name:lt" type="text" />
 	<poi_additional name="name:lv" tag="name:lv" type="text" />
 	<poi_additional name="name:nl" tag="name:nl" type="text" />
 	<poi_additional name="name:pl" tag="name:pl" type="text" />
@@ -56,7 +57,7 @@
 				<poi_type name="greengrocer" tag="shop" value="greengrocer"/>
 				<poi_type name="seafood" tag="shop" value="seafood"/>
 				<poi_type name="confectionery" tag="shop" value="confectionery"/>
-				<poi_type name="ice_cream" tag="shop" value="ice_cream"/>
+				<poi_type name="ice_cream" tag="amenity" value="ice_cream"/>
 				<poi_type name="supermarket" tag="shop" value="supermarket"/>
 				<poi_type name="shop_tea" tag="shop" value="tea"/>
 				<poi_type name="dairy" tag="shop" value="dairy"/>
@@ -118,6 +119,7 @@
 			<poi_type name="outdoor" tag="shop" value="outdoor"/>
 			<poi_type name="paint" tag="shop" value="paint"/>
 			<poi_type name="pet" tag="shop" value="pet"/>
+			<poi_type name="photo" tag="shop" value="photo"/>
 			<poi_type name="radiotechnics" tag="shop" value="radiotechnics"/>
 			<poi_type name="second_hand" tag="shop" value="second_hand"/>
 			<poi_type name="ship_chandler" tag="shop" value="ship_chandler"/>
@@ -162,7 +164,6 @@
 				<poi_type name="ford" tag="highway" value="ford"/>
 				<poi_type name="mountain_pass" tag="mountain_pass" value="yes"/>
 				<poi_type name="gate" tag="barrier" value="gate"/>
-				<poi_type name="city_wall" tag="barrier" value="city_wall"/>
 				<poi_type name="lift_gate" tag="barrier" value="lift_gate"/>
 				<poi_type name="toll_booth" tag="barrier" value="toll_booth"/>
 				<poi_type name="border_control" tag="barrier" value="border_control"/>
@@ -186,21 +187,21 @@
 					<poi_additional name="fuel:cng" tag="fuel:cng" value="yes"/>
 					<poi_additional name="fuel:electricity" tag="fuel:electricity" value="yes"/>
 				<!-- Too many additionals 
-					<poi_additional name="fuel_gtl_diesel_yes" tag="fuel:GTL_diesel" value="yes"/>
-					<poi_additional name="fuel_hgv_diesel_yes" tag="fuel:HGV_diesel" value="yes"/>
-					<poi_additional name="fuel_biodiesel_yes" tag="fuel:biodiesel" value="yes"/>
-					<poi_additional name="fuel_octane_91_yes" tag="fuel:octane_91" value="yes"/>
-					<poi_additional name="fuel_octane_100_yes" tag="fuel:octane_100" value="yes"/>
-					<poi_additional name="fuel_1_25_yes" tag="fuel:1_25" value="yes"/>
-					<poi_additional name="fuel_1_50_yes" tag="fuel:1_50" value="yes"/>
-					<poi_additional name="fuel_ethanol_yes" tag="fuel:ethanol" value="yes"/>
-					<poi_additional name="fuel_methanol_yes" tag="fuel:methanol" value="yes"/>
-					<poi_additional name="fuel_svo_yes" tag="fuel:svo" value="yes"/>
-					<poi_additional name="fuel_e10_yes" tag="fuel:e10" value="yes"/>
-					<poi_additional name="fuel_e20_yes" tag="fuel:e20" value="yes"/>
-					<poi_additional name="fuel_e85_yes" tag="fuel:e85" value="yes"/>
-					<poi_additional name="fuel_biogas_yes" tag="fuel:biogas" value="yes"/>
-					<poi_additional name="fuel_lh2_yes" tag="fuel:LH2" value="yes"/>
+					<poi_additional name="fuel:gtl_diesel" tag="fuel:GTL_diesel" value="yes"/>
+					<poi_additional name="fuel:hgv_diesel" tag="fuel:HGV_diesel" value="yes"/>
+					<poi_additional name="fuel:biodiesel" tag="fuel:biodiesel" value="yes"/>
+					<poi_additional name="fuel:octane_91" tag="fuel:octane_91" value="yes"/>
+					<poi_additional name="fuel:octane_100" tag="fuel:octane_100" value="yes"/>
+					<poi_additional name="fuel:1_25" tag="fuel:1_25" value="yes"/>
+					<poi_additional name="fuel:1_50" tag="fuel:1_50" value="yes"/>
+					<poi_additional name="fuel:ethanol" tag="fuel:ethanol" value="yes"/>
+					<poi_additional name="fuel:methanol" tag="fuel:methanol" value="yes"/>
+					<poi_additional name="fuel:svo" tag="fuel:svo" value="yes"/>
+					<poi_additional name="fuel:e10" tag="fuel:e10" value="yes"/>
+					<poi_additional name="fuel:e20" tag="fuel:e20" value="yes"/>
+					<poi_additional name="fuel:e85" tag="fuel:e85" value="yes"/>
+					<poi_additional name="fuel:biogas" tag="fuel:biogas" value="yes"/>
+					<poi_additional name="fuel_lh2" tag="fuel:LH2" value="yes"/>
 				-->
 				</poi_type>
 				<poi_type name="charging_station" tag="amenity" value="charging_station"/>
@@ -421,6 +422,7 @@
 			<poi_type name="healthcare_yes" tag="healthcare" value="yes"/>
 		</poi_category>
 		<poi_category name="office" default_tag="office">
+			<poi_reference name="government"/>
 			<poi_type name="company" tag="office" value="company"/>
 			<poi_type name="insurance" tag="office" value="insurance"/>
 			<poi_type name="estate_agent" tag="office" value="estate_agent"/>
@@ -522,7 +524,7 @@
 				<poi_type name="palaeontological_site" tag="geological" value="palaeontological_site"/>
 				<poi_type name="battlefield" tag="historic" value="battlefield"/>
 				<poi_type name="boundary_stone" tag="historic" value="boundary_stone"/>
-				<poi_type name="cannon" tag="historic" value="cannon"/>
+				<poi_type name="historic_cannon" tag="historic" value="cannon"/>
 				<poi_type name="castle" tag="historic" value="castle"/>
 				<poi_type name="city_gate" tag="historic" value="city_gate"/>
 				<poi_type name="fort" tag="historic" value="fort"/>
@@ -561,6 +563,7 @@
 				<poi_type name="alpine_hut" tag="tourism" value="alpine_hut"/>
 				<poi_type name="chalet" tag="tourism" value="chalet"/>
 				<poi_type name="apartment" tag="tourism" value="apartment"/>
+				<poi_type name="wilderness_hut" tag="tourism" value="wilderness_hut"/>
 			</poi_filter>
 			<poi_type name="place_of_worship" tag="amenity" value="place_of_worship">
 				<poi_additional name="religion_christian" tag="religion" value="christian"/>
@@ -592,9 +595,11 @@
 			<poi_type name="spring" tag="natural" value="spring"/>
 			<poi_type name="hot_spring" tag="natural" value="hot_spring"/>
 			<poi_type name="grave_yard" tag="amenity" value="grave_yard"/>
+			<poi_type name="tomb" tag="historic" value="tomb"/>
 			<poi_type name="club_tourism" tag="club" value="tourism"/>
 			<poi_type name="funicular" tag="railway" value="funicular"/>
 			<poi_type name="resort" tag="leisure" value="resort"/>
+			<poi_type name="city_wall" tag="barrier" value="city_wall"/>
 		</poi_category>
 		<poi_category name="entertainment" default_tag="amenity">
 			<poi_filter name="club">
@@ -768,6 +773,7 @@
 		<poi_category name="finance" default_tag="finance">
 			<poi_type name="bank" tag="amenity" value="bank"/>
 			<poi_type name="atm" tag="amenity" value="atm"/>
+			<poi_type name="payment_terminal" tag="amenity" value="payment_terminal"/>
 			<poi_type name="money_lender" tag="shop" value="money_lender"/>
 			<poi_type name="pawnbroker" tag="shop" value="pawnbroker"/>
 			<poi_type name="bureau_de_change" tag="amenity" value="bureau_de_change"/>
@@ -858,7 +864,7 @@
 			<poi_type name="military_naval_base" tag="military" value="naval_base"/>
 			<poi_type name="military_nuclear_explosion_site" tag="military" value="nuclear_explosion_site"/>
 		</poi_category>
-		<poi_category name="osmwiki">
+		<poi_category name="osmwiki" top="true">
 		</poi_category>
 		<poi_category name="user_defined_other" default_tag="amenity">
 		</poi_category>

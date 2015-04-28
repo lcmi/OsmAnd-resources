@@ -17,6 +17,10 @@ mycp() {
 	mygroup ${1}_${2} $3
 }
 
+mycpname() {
+	mygroup ${1} ${2}
+}
+
 
 
 ## Shaders ! # copy all shaders untouched
@@ -27,17 +31,19 @@ cp ../png/xxhdpi/h_* ../../rendering_styles/style-icons/drawable-xxhdpi/
 
 mygroup landuse landuse_coniferous.png
 mycp landuse grass landuse_grass.png
-mycp landuse forest landuse_coniferous.png               # Keep shaders with background color, cannot be replaced by icons!
+mycpname forest landuse_coniferous_and_deciduous.png               # Keep shaders with background color, cannot be replaced by icons!
+mycpname wood landuse_coniferous_and_deciduous.png
 mycp natural beach tourist_beach2.png                     # Keep shaders with background color, cannot be replaced by icons!
 mycp landuse cemetery place_of_worship_christian3.png    # Keep shaders with background color, cannot be replaced by icons!
 mycp amenity grave_yard place_of_worship_christian3.png  # Keep shaders with background color, cannot be replaced by icons!
-mycp natural scrub landuse_scrub.png                     # Keep shaders with background color, cannot be replaced by icons!
-mycp natural swamp landuse_swamp.png                     # Keep shaders with background color, cannot be replaced by icons!
+#mycp natural scrub landuse_scrub.png                     # Keep shaders with background color, cannot be replaced by icons!
+#mycp natural swamp landuse_swamp.png                     # Keep shaders with background color, cannot be replaced by icons!
 mycp tourism zoo tourist_zoo.png                         # Keep shaders with background color, cannot be replaced by icons!
 mycp military danger_area poi_danger_area.png
 mycp military nuclear_explosion_site poi_nuclear_explosion_site.png
 mycp natural glacier poi_peak2.png                       # Keep shaders with background color, cannot be replaced by icons!
 mycp landuse landfill landuse_landfill.png
+#mycpname wetland landuse_wetland.png
 
 mycp stroke black functional-icons_black_stroke.png
 mycp stroke darkgreen functional-icons_darkgreen_stroke.png
@@ -71,7 +77,7 @@ mycp natural volcano_active functional-icons_volcano_active.png
 mycp natural volcano_big functional-icons_volcano_big.png
 mycp natural volcano functional-icons_volcano.png  #Is poi_peak.png with color #D40000  #scale 0.5
 mycp waterway rapids barrier_rapids.png  #scale 0.375
-mycp waterway waterfall water_waterfall.png  #scale 0.375
+mycpname waterfall water_waterfall.png  #scale 0.375
 
 
 ## Location dots
@@ -128,6 +134,7 @@ mygroup healthcare health_pharmacy.png
 mycp amenity dentist health_dentist.png
 mycp amenity doctors health_doctors.png
 mycp amenity hospital health_hospital2.png
+mycpname clinic health_hospital.png
 mycp amenity nursing_home health_nursing_home.png
 mycp amenity pharmacy health_pharmacy2.png
 mycp amenity veterinary health_veterinary.png
@@ -217,6 +224,8 @@ mycp amenity motorcycle_parking_paid transport_parking_motorcycle_paid.png
 
 mygroup public_transport transport_bus_stop.png
 mycp amenity bus_station transport_bus_station2.png
+mycpname public_transport_station transport_bus_station.png
+mycpname public_transport_stop_position transport_bus_stop2.png
 mycp highway bus_stop transport_bus_stop.png
 mycp highway bus_stop_small functional-icons_bus_stop_small.png
 mycp highway bus_stop_round_small functional-icons_bus_stop_round_small.png
@@ -242,7 +251,8 @@ mycp man_made lighthouse transport_lighthouse.png
 mycp waterway lock_gate functional-icons_lock_gate.png  #scale 0.5
 mycp waterway dock transport_dock.png
 
-mycp railway halt functional-icons_halt.png  #scale 0.25
+mycpname halt_small functional-icons_halt.png  #scale 0.25
+mycpname halt transport_halt.png  #scale 0.25
 mycp railway level_crossing functional-icons_level_crossing.png  #scale 0.5
 mycp railway platform transport_train_station2.png
 mycp railway station_disused functional-icons_train_station_disused.png
@@ -345,6 +355,7 @@ mycp tourism guest_house accommodation_bed_and_breakfast.png
 mycp tourism hostel accommodation_hostel.png
 mycp tourism hotel accommodation_hotel.png
 mycp tourism motel accommodation_motel.png
+mycpname wilderness_hut accommodation_wilderness_hut.png
 
 
 ## Tourism
@@ -372,6 +383,8 @@ mycp tourism picnic_site tourist_picnic.png
 mycp tourism theme_park tourist_theme_park.png
 mycp tourism viewpoint tourist_view_point.png
 mycp tourism zoo tourist_zoo.png
+mycpname city_wall tourist_city_wall.png
+mycpname clock tourist_clock.png
 
 ## Entertainment
 mygroup entertainment tourist_cinema.png
@@ -391,6 +404,7 @@ mycp historic battlefield tourist_battlefield.png
 mycp historic boundary_stone poi_boundary_administrative.png
 mycp historic cannon tourist_cannon.png
 mycp historic castle tourist_castle2.png
+mycpname city_gate barrier_sally_port.png
 mycp historic fort tourist_castle2.png
 mycp historic memorial tourist_memorial.png
 mycp historic mine poi_mine_abandoned.png
@@ -400,9 +414,10 @@ mycp historic rune_stone tourist_rune_stone.png
 mycp historic ship tourist_ship.png
 mycp historic wayside_cross tourist_wayside_cross.png
 mycp historic wayside_shrine tourist_wayside_shrine.png
-mycp historic wreck tourist_wreck.png
-mycp geologic palaeontological_site tourist_palaeontological_site.png
+mycpname wreck tourist_wreck.png
+mycpname palaeontological_site tourist_palaeontological_site.png
 mycp building pyramid tourist_pyramid.png
+mycpname tomb tourist_memorial.png
 
 ## Special POI icons
 mycp special_poi big_ben special_poi_big_ben.png
@@ -483,6 +498,7 @@ mycp amenity car_wash_self_service amenity_car_wash_self_service.png
 mycp amenity fountain amenity_fountain2.png
 mycp amenity fountain_night functional-icons_fountain2_night.png
 mycp amenity monastery place_of_worship_monastery.png
+mycpname historic_monastery place_of_worship_monastery.png
 mycp amenity place_of_worship place_of_worship_unknown.png
 mycp amenity post_box amenity_post_box.png
 mycp amenity post_office amenity_post_office2.png
@@ -503,9 +519,20 @@ mycp religion taoist place_of_worship_taoist.png
 mycp amenity brothel amenity_brothel.png
 mycp amenity smoking_area amenity_smoking_area.png
 mycp amenity studio amenity_studio.png
+mycpname waste_basket amenity_waste_bin.png
+mycpname waste_basket2 amenity_waste_basket.png
+mycpname waste_disposal amenity_waste_disposal.png
+
+mycpname internet_access_wlan amenity_internet_access_wlan.png
 #! mycp amenity grave_yard place_of_worship_christian3.png  #already defined as icon in the shader section
 
 mygroup craft craft_tailor.png
+mycpname craft_beekeeper craft_beekeeper.png
+mycpname craft_blacksmith craft_blacksmith.png
+mycpname craft_brewery craft_brewery.png
+mycpname craft_locksmith craft_locksmith.png
+mycpname craft_painter craft_painter.png
+mycpname craft_tailor craft_tailor.png
 
 mygroup finance money_bank2.png
 mycp amenity atm money_atm.png
@@ -529,7 +556,7 @@ mygroup landuse landuse_landuse.png
 ## Education
 mygroup education education_university.png
 mycp amenity college education_college.png
-mycp amenity kindergarten education_nursery2.png
+mycpname kindergarten education_kindergarten.png
 mycp amenity school education_school.png
 mycp amenity university education_university.png
 
@@ -541,6 +568,8 @@ mygroup water_supply poi_water_tower.png
 mygroup power power_station.png
 mygroup communication amenity_telephone.png
 mygroup trash_disposal landuse_landfill.png
+mycpname bridge poi_bridge.png
+mycpname tunnel poi_tunnel.png
 mycp amenity hunting_stand poi_hunting_stand.png
 mycp highway street_lamp functional-icons_street_lamp.png
 mycp highway street_lamp_lit functional-icons_street_lamp_lit.png
@@ -578,6 +607,8 @@ mycp power tower_big functional-icons_power_tower_big.png
 mycp power tower functional-icons_power_tower.png
 mycp power tower_small functional-icons_power_tower_small.png
 mycp railway buffer_stop poi_buffer_stop.png
+mycpname works poi_works.png
+mycpname military_bunker poi_military_bunker.png
 mygroup military poi_military_bunker.png
 
 
@@ -591,7 +622,6 @@ mycp amenity cafe food_cafe.png
 mycp amenity drinking_water food_drinkingtap.png
 mycp amenity fast_food food_fastfood.png
 mycp amenity food_court food_fastfood.png
-mycp amenity ice_cream food_ice_cream.png
 mycp amenity pub food_pub.png
 mycp amenity restaurant food_restaurant.png
 mycp man_made water_well food_water_well.png
@@ -1196,6 +1226,7 @@ mycp shop alcohol shopping_alcohol.png
 mycp shop baby_goods shopping_baby.png
 mycp shop bakery shopping_bakery.png
 mycp shop bicycle shopping_bicycle.png
+mycpname beverages shopping_beverages.png
 mycp shop books shopping_book2.png
 mycp shop boutique shopping_clothes.png
 mycp shop butcher shopping_butcher2.png
@@ -1211,7 +1242,8 @@ mycp shop copyshop shopping_copyshop.png
 mycp shop dairy shopping_dairy.png
 mycp shop department_store shopping_department_store.png
 mycp shop doityourself shopping_diy.png
-mycp shop electronics shopping_hifi.png
+mycpname electronics shopping_electronics.png
+mycpname hifi shopping_hifi.png
 mycp shop fashion shopping_clothes.png
 mycp shop fishing shopping_tackle.png
 mycp shop florist shopping_florist.png
@@ -1223,6 +1255,7 @@ mycp shop greengrocer shopping_greengrocer.png
 mycp shop hairdresser shopping_hairdresser.png
 mycp shop hardware shopping_diy.png
 mycp shop hearing_aids shopping_hearing_aids.png
+mycpname ice_cream food_ice_cream.png
 mycp shop jewelry shopping_jewelry2.png
 mycp shop kiosk shopping_kiosk.png
 mycp shop laundry shopping_laundrette.png
@@ -1233,6 +1266,7 @@ mycp shop musical_instrument shopping_music.png
 mycp shop optician shopping_opticians.png
 mycp shop outdoor shopping_tackle.png
 mycp shop pet shopping_pet2.png
+mycpname photo shopping_photo.png
 mycp shop seafood shopping_fish.png
 mycp shop shoes shopping_shoes.png
 mycp shop sports shopping_sports.png
@@ -1241,10 +1275,12 @@ mycp shop ticket shopping_ticket.png
 mycp shop tobacco shopping_tobacco.png
 mycp shop toys shopping_toys.png
 mycp shop video shopping_video_rental.png
+mycpname wine shopping_wine.png
 
 
 # mygroup custom_id icons8 #TODO
 mygroup user_defined icons8_user.png
+mygroup user_defined_other icons8_user.png
 mygroup osmwiki icons8_wikipedia.png
 mygroup name_finder icons8_web_search.png
 mycp osmand waypoint functional-icons_waypoint.png
